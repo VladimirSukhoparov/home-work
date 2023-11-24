@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { createElement } from "./utils.js";
+import React from "react";
+
 import "./styles.css";
+import { plural } from "./utils.js";
 
 /**
  * Приложение
@@ -9,18 +10,14 @@ import "./styles.css";
  */
 function App({ store }) {
   const list = store.getState().list;
-  const [id, setId] = useState(list.length);
-  const addItem = () => {
-    store.addItem(id);
-    setId(id + 1);
-  };
+
   return (
     <div className="App">
       <div className="App-head">
         <h1>Приложение на чистом JS</h1>
       </div>
       <div className="App-controls">
-        <button onClick={() => addItem()}>Добавить</button>
+        <button onClick={() => store.addItem()}>Добавить</button>
       </div>
       <div className="App-center">
         <div className="List">
@@ -33,7 +30,14 @@ function App({ store }) {
                 <div className="Item-code">{item.code}</div>
                 <div className="Item-title">
                   {item.count
-                    ? `${item.title} | Выделяли ${item.count} раз`
+                    ? `${item.title} | Выделяли ${item.count} ${plural(
+                        item.count,
+                        {
+                          one: "раз",
+                          few: "раза",
+                          many: "раз",
+                        }
+                      )}`
                     : item.title}
                 </div>
                 <div className="Item-actions">

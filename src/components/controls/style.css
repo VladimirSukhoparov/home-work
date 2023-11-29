@@ -3,3 +3,22 @@
   justify-content: flex-end;
   padding: 20px;
 }
+
+.Controls button {
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  padding-left: 9px;
+  padding-right: 8px;
+}
+
+.Controls span {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.Controls-basket {
+  margin-left: 15px;
+  margin-right: 20px;
+  font-weight: 700;
+}

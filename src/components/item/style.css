@@ -11,11 +11,15 @@
 
 .Item-code {
   padding: 20px 10px 20px 20px;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .Item-title {
   width: 100%;
   padding: 20px 10px;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .Item-actions {
@@ -23,3 +27,19 @@
   justify-content: flex-end;
   padding: 20px 20px 20px 10px;
 }
+
+.Item-actions span {
+  white-space: nowrap;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  color: #404040;
+}
+
+.Item-actions button {
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  margin-left: 24px;
+}
+

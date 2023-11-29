@@ -41,48 +41,47 @@ class Store {
   }
 
   /**
-   * Добавление новой записи
+   * Добавление в корзину
    */
-  addItem() {
-    this.setState({
-      ...this.state,
-      list: [...this.state.list, {code: generateCode(), title: 'Новая запись'}]
-    })
-  };
-
-  /**
-   * Удаление записи по коду
-   * @param code
-   */
-  deleteItem(code) {
-    this.setState({
-      ...this.state,
-      // Новый список, в котором не будет удаляемой записи
-      list: this.state.list.filter(item => item.code !== code)
-    })
-  };
-
-  /**
-   * Выделение записи по коду
-   * @param code
-   */
-  selectItem(code) {
-    this.setState({
-      ...this.state,
-      list: this.state.list.map(item => {
-        if (item.code === code) {
-          // Смена выделения и подсчёт
-          return {
-            ...item,
-            selected: !item.selected,
-            count: item.selected ? item.count : item.count + 1 || 1,
-          };
-        }
-        // Сброс выделения если выделена
-        return item.selected ? {...item, selected: false} : item;
-      })
-    })
+  addBasket(item) {
+    if (this.state.basket.find((el) => el.code === item.code)) {
+      this.setState({
+        ...this.state,
+        basket: this.state.basket.map((el) => {
+          if (el.code === item.code) {
+            el.count = el.count + 1;
+          }
+          return el;
+        }),
+        resultSum:this.state.resultSum + this.state.basket.find((el)=>
+        el.code===item.code
+      ).price,
+        counter:this.state.counter,
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        basket: [...this.state.basket, { ...item, count: 1 }],
+        resultSum:this.state.resultSum + item.price,
+        counter:this.state.counter + 1,
+      });
+      
+    }
   }
+
+  /**
+   * Удаление товара
+   * @param item
+   */
+  deleteBasket(item) {
+    this.setState({
+      ...this.state,
+      basket: this.state.basket.filter((el) => el.code !== item.code),
+      resultSum:this.state.resultSum - item.count*item.price,
+      counter:this.state.counter - 1
+    });
+  }
+
 }
 
 export default Store;

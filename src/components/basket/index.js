@@ -17,7 +17,9 @@ const Basket = (props) => {
       <div className="Basket-box">
         <div className="Basket-sum">
           <span>Итого</span>
-          <span className="Basket-total">{`${props.resultSum} ₽`}</span>
+          <span className="Basket-total">{`${props.sum.toLocaleString(
+            "ru-RU"
+          )} ₽`}</span>
         </div>
       </div>
     </div>
@@ -27,12 +29,12 @@ const Basket = (props) => {
 Basket.propTypes = {
   basket: PropTypes.arrayOf(
     PropTypes.shape({
-      code: PropTypes.number,
+      id: PropTypes.number,
       count: PropTypes.number,
     })
   ).isRequired,
   setIsOpen: PropTypes.func,
-  resultSum: PropTypes.number,
+  sum: PropTypes.number,
   onDeleteBasket: PropTypes.func,
 };
 

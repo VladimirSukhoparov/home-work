@@ -15,7 +15,7 @@ function Controls(props) {
               one: "товар",
               few: "товара",
               many: "товаров",
-            })} / ${props.resultSum} ₽`
+            })} / ${props.sum} ₽`
           : "пусто"}
       </span>
       <button onClick={() => props.setIsOpen(true)}>{props.caption}</button>
@@ -26,7 +26,7 @@ function Controls(props) {
 Controls.propTypes = {
   title: PropTypes.string,
   counter:PropTypes.number,
-  resultSum:PropTypes.number,
+  sum:PropTypes.number,
   setIsOpen: PropTypes.func,
 };
 

@@ -5,13 +5,13 @@ import "./style.css";
 function Item(props) {
   const callbacks = {
     onAddBasket: () => {
-      props.onAddBasket(props.item);
+      props.onAddBasket(props.item.id);
     },
   };
 
   return (
     <div className={"Item"}>
-      <div className="Item-code">{props.item.code}</div>
+      <div className="Item-code">{props.item.id}</div>
       <div className="Item-title">{props.item.title}</div>
       <div className="Item-actions">
         <span className="Item-price">{`${props.item.price.toLocaleString(
@@ -25,7 +25,7 @@ function Item(props) {
 
 Item.propTypes = {
   item: PropTypes.shape({
-    code: PropTypes.number,
+    id: PropTypes.number,
     title: PropTypes.string,
     price:PropTypes.number,
   }).isRequired,

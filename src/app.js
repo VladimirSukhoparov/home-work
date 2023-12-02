@@ -17,14 +17,14 @@ function App({store}) {
 
   const list = store.getState().list;
   const basket = store.getState().basket;
-  const resultSum = store.getState().resultSum;
+  const sum = store.getState().sum;
   const counter = store.getState().counter;
   const [isOpen, setIsOpen] = useState(false);
 
   const callbacks = {
     addBasket: useCallback(
-      (item) => {
-        store.addBasket(item);
+      (id) => {
+        store.addBasket(id);
       },
       [basket]
     ),
@@ -45,7 +45,7 @@ function App({store}) {
         title={"В корзине:"}
         setIsOpen={setIsOpen}
         counter={counter}
-        resultSum={resultSum}
+        sum={sum}
       />
       <List
         children={list.map((item) => (
@@ -58,7 +58,7 @@ function App({store}) {
             <Basket
               basket={basket}
               setIsOpen={setIsOpen}
-              resultSum={resultSum}
+              sum={sum}
               onDeleteBasket={callbacks.deleteBasket}
             />
           }

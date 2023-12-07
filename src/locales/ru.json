@@ -1,0 +1,25 @@
+{
+  "storeTitle": "Магазин",
+  "homePage": "Главная",
+  "inBasket": "В корзине:",
+  "empty": "пусто",
+  "goTo": "Перейти",
+  "close": "Закрыть",
+  "addTo": "Добавить",
+  "delete": "Удалить",
+  "pluralVariants": [
+    {
+      "one": "товар",
+      "few": "товара",
+      "many": "товаров"
+    },
+    "ru-RU"
+  ],
+  "basketTitle": "Корзина",
+  "totalPrice": "Итого",
+  "pcs": "шт",
+  "country": "Страна производитель:",
+  "category": "Категория:",
+  "dateCreate": "Год выпуска:",
+  "price": "Цена:"
+}

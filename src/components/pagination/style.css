@@ -1,0 +1,32 @@
+.Pagination {
+  text-align: right;
+  padding: 22px;
+}
+
+.Pagination-btn {
+  min-width: 20px;
+  height: 20px;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+}
+
+.Pagination-btn:hover {
+  background: #e1e1e1;
+}
+
+.Pagination-btn_active,
+.Pagination-btn_active:hover {
+  background: #0087e9;
+  color: #ffffff;
+}
+
+.Pagination-dots {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}

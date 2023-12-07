@@ -1,0 +1,9 @@
+.ItemNav{
+  padding: 20px;
+  font-size: 18px;
+}
+
+.ItemNav a{
+    text-decoration-line: underline;
+    color: #0087e9;
+  }

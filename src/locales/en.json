@@ -1,0 +1,24 @@
+{
+  "storeTitle": "Store",
+  "homePage": "Main",
+  "inBasket": "In basket:",
+  "empty": "empty",
+  "goTo": "Go",
+  "close": "Close",
+  "addTo": "Add",
+  "delete": "Remove",
+  "pluralVariants": [
+    {
+      "one": "goods",
+      "other": "goods"
+    },
+    "en-EN"
+  ],
+  "basketTitle": "Basket",
+  "totalPrice": "Total",
+  "pcs": "pcs",
+  "country": "Country of production:",
+  "category": "Category:",
+  "dateCreate": "Year of release:",
+  "price": "Price:"
+}

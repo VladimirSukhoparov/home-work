@@ -1,0 +1,15 @@
+.LocaleSwitcher {
+  padding: 20px;
+  vertical-align: baseline;
+}
+.LocaleSwitcher span {
+  margin: 0 3px;
+  cursor: pointer;
+}
+.LocaleSwitcher span:hover {
+  text-decoration: underline;
+}
+
+.LocaleSwitcher-select {
+  text-decoration: underline;
+}

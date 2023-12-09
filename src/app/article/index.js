@@ -5,14 +5,15 @@ import useStore from "../../store/use-store";
 import useSelector from "../../store/use-selector";
 import BasketTool from "../../components/basket-tool";
 import ItemArticle from "../../components/item-article";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import LocaleSwitcher from "../../components/locale-switcher";
 import NavBar from "../../components/nav-bar";
 
 const Article = () => {
   const store = useStore();
   const location = useLocation();
-  const id = location.pathname.replace("/article/", "");
+  //const id = location.pathname.replace("/article/", "");
+  const {id} = useParams()
 
   const select = useSelector((state) => ({
     article: state.article.item,
@@ -20,6 +21,7 @@ const Article = () => {
     sum: state.basket.sum,
     lang: state.locale.lang,
   }));
+
 
   useEffect(() => {
     store.actions.article.load(id);

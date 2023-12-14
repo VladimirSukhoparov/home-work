@@ -8,7 +8,6 @@ import {I18nContext} from "../i18n/context";
  * Хук возвращает функцию для локализации текстов, код языка и функцию его смены
  */
 export default function useTranslate() {
-  // Вариант на внешнем состоянии
   // const store = useStore();
   // // Текущая локаль
   // const lang = useSelector(state => state.locale.lang);
@@ -19,6 +18,5 @@ export default function useTranslate() {
   //
   // return {lang, setLang, t};
 
-  // Вариант на контексте с провайдером <I18nProvider>
   return useContext(I18nContext);
 }

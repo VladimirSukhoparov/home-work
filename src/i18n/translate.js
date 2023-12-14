@@ -12,7 +12,7 @@ export default function translate(lang, text, plural) {
     ? translations[lang][text]
     : text;
 
-  if (typeof plural !== 'undefined') {
+  if (typeof plural !== 'undefined'){
     const key = new Intl.PluralRules(lang).select(plural);
     if (key in result) {
       result = result[key];

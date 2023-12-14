@@ -28,8 +28,7 @@ BasketTool.propTypes = {
 };
 
 BasketTool.defaultProps = {
-  onOpen: () => {
-  },
+  onOpen: () => {},
   sum: 0,
   amount: 0,
   t: (text) => text

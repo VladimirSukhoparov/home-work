@@ -6,9 +6,6 @@ import Menu from "../../components/menu";
 import BasketTool from "../../components/basket-tool";
 import SideLayout from "../../components/side-layout";
 
-/**
- * Контейнер с компонентами навигации
- */
 function Navigation() {
   const store = useStore();
 

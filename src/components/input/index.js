@@ -46,8 +46,7 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  onChange: () => {
-  },
+  onChange: () => {},
   type: 'text',
   theme: ''
 }

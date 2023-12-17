@@ -5,18 +5,19 @@ import useTranslate from "../../hooks/use-translate";
 import useStore from "../../hooks/use-store";
 import useSelector from "../../hooks/use-selector";
 import Admin from "../../components/admin";
-import useInit from "../../hooks/use-init";
 
-const Header = (props) => {
+
+const Header = () => {
   const { t } = useTranslate();
   const store = useStore();
 
   const select = useSelector((state) => ({
     root: state.login.root,
-    userName: state.profile.userName,
-    waiting: state.profile.waiting,
-    root:state.profile.root,
+    userName: state.login.user,
+    waiting: state.login.waiting,
   }));
+
+  console.log(select.root);
 
 
   const callbacks = {

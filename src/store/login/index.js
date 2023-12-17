@@ -6,18 +6,16 @@ import StoreModule from "../module";
 class LoginState extends StoreModule {
   initState() {
     return {
-      token: localStorage.getItem('token') || "",
+      token: localStorage.getItem("token") || "",
+      user:localStorage.getItem("user") || "",
       error: "",
       waiting: false, // признак ожидания загрузки
+      root:  localStorage.getItem("token") ? true : false,
     };
   }
 
-
-
-
   async sign(login, password) {
     try {
-
       const response = await fetch(`/api/v1/users/sign`, {
         method: "POST",
         headers: {
@@ -32,11 +30,15 @@ class LoginState extends StoreModule {
       if (response.ok) {
         const { result } = await response.json();
         localStorage.setItem("token", result.token);
+        localStorage.setItem("user", result.user.profile.name);
+
         this.setState(
           {
-            token:  result.token,
+            token: result.token,
+            user:result.user.profile.name,
             waiting: false,
             error: "",
+            root: true,
           },
           "Авторизация прошла успешно"
         );
@@ -45,7 +47,7 @@ class LoginState extends StoreModule {
         this.setState(
           {
             waiting: false,
-            error: error.data.issues.map(error => error.message),
+            error: error.data.issues.map((error) => error.message),
           },
           "Авторизация не удалась"
         );
@@ -67,12 +69,14 @@ class LoginState extends StoreModule {
       });
       if (response.ok) {
         localStorage.removeItem("token");
-        localStorage.removeItem("userName");
+        localStorage.removeItem("user");
         this.setState(
           {
             token: "",
+            user:'',
             waiting: false,
             error: "",
+            root: false,
           },
 
           "Деавторизация прошла успешно"
@@ -91,16 +95,14 @@ class LoginState extends StoreModule {
       console.log(error);
     }
   }
-  clearError(){
-    this.setState(
-      {...this.getState(),
-        waiting: false,
-        error: '',
-      }
-    );
+  clearError() {
+    this.setState({
+      ...this.getState(),
+      waiting: false,
+      error: "",
+      roor: false,
+    });
   }
 }
-
-
 
 export default LoginState;

@@ -11,7 +11,8 @@ import Spinner from "../../components/spinner";
 
 const Profile = () => {
   const store = useStore();
-  
+ 
+
   const { t } = useTranslate();
   const select = useSelector((state) => ({
     userName: state.profile.userName,
@@ -20,6 +21,13 @@ const Profile = () => {
     waiting: state.profile.waiting,
     token:state.login.token,
   }));
+
+  useInit(() => {
+    store.actions.profile.getProfile();
+  },
+  [select.token],
+  true) 
+
 
   return (
     <PageLayout>

@@ -1,4 +1,3 @@
-import { useCallback, useContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import useSelector from "../hooks/use-selector";
 import Main from "./main";
@@ -6,8 +5,6 @@ import Basket from "./basket";
 import Article from "./article";
 import Login from "./login";
 import Profile from "./profile";
-import useInit from "../hooks/use-init";
-import useStore from "../hooks/use-store";
 import ProfileRoot from "../containers/profile-root";
 
 /**
@@ -15,19 +12,9 @@ import ProfileRoot from "../containers/profile-root";
  * @returns {React.ReactElement}
  */
 function App() {
-  const store = useStore();
-
   const activeModal = useSelector((state) => state.modals.name);
-  const token = useSelector((state) => state.login.token);
-  const root = useSelector((state)=>state.profile.root)
+  const root = useSelector((state)=>state.login.root)
 
-  useInit(
-    () => {
-      store.actions.profile.getProfile();
-    },
-    [token],
-    true
-  );
   return (
     <>
       <Routes>

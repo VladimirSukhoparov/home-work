@@ -7,11 +7,10 @@ import StoreModule from "../module";
 class ProfileState extends StoreModule {
   initState() {
     return {
-      userName: localStorage.getItem("userName") || "",
+      userName: localStorage.getItem("user") || "",
       userPhone: "",
       userMail: "",
       error: "",
-      root:false,
       waiting: true, // признак ожидания загрузки
     };
   }
@@ -37,11 +36,9 @@ class ProfileState extends StoreModule {
             userPhone: result.profile.phone,
             userMail: result.email,
             waiting: false,
-            root:true,
           },
           "Загружена информация о пользователе"
         );
-        localStorage.setItem("userName", result.profile.name);
       }
     } catch (error) {
       console.log(error);
@@ -56,9 +53,7 @@ class ProfileState extends StoreModule {
       userMail: "",
       error: "",
       waiting: true,
-      root:false,
     });
-    localStorage.removeItem("userName");
   }
 }
 

@@ -18,7 +18,7 @@ const Admin = (props) => {
           </button>
         </Spinner>
       ) : (
-        <Link to={props.urlLogin}>
+        <Link to={props.urlLogin} state={{ prev: location.pathname }}>
           <button>{props.login}</button>
         </Link>
       )}

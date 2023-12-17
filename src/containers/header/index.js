@@ -17,9 +17,6 @@ const Header = () => {
     waiting: state.login.waiting,
   }));
 
-  console.log(select.root);
-
-
   const callbacks = {
     logOut: useCallback((token) => {
       store.actions.login.logOut(token);

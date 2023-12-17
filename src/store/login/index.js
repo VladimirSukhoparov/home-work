@@ -15,6 +15,7 @@ class LoginState extends StoreModule {
   }
 
   async sign(login, password) {
+    
     try {
       const response = await fetch(`/api/v1/users/sign`, {
         method: "POST",
@@ -29,9 +30,6 @@ class LoginState extends StoreModule {
 
       if (response.ok) {
         const { result } = await response.json();
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("user", result.user.profile.name);
-
         this.setState(
           {
             token: result.token,
@@ -42,6 +40,9 @@ class LoginState extends StoreModule {
           },
           "Авторизация прошла успешно"
         );
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("user", result.user.profile.name);
+        
       } else {
         const { error } = await response.json();
         this.setState(

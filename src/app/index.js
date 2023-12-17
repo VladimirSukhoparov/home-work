@@ -6,6 +6,7 @@ import Article from "./article";
 import Login from "./login";
 import Profile from "./profile";
 import ProfileRoot from "../containers/profile-root";
+import { useState } from "react";
 
 /**
  * Приложение
@@ -13,8 +14,8 @@ import ProfileRoot from "../containers/profile-root";
  */
 function App() {
   const activeModal = useSelector((state) => state.modals.name);
-  const root = useSelector((state)=>state.login.root)
-
+  const root = useSelector((state) => state.login.root);
+  const [redirect, setRedirect] = useState ()
   return (
     <>
       <Routes>
@@ -23,8 +24,8 @@ function App() {
         <Route
           path={"/login"}
           element={
-            <ProfileRoot url={"/profile"} root={!root}>
-              <Login />
+            <ProfileRoot url={redirect} root={!root}>
+              <Login setRedirect={setRedirect}/>
             </ProfileRoot>
           }
         />
@@ -37,7 +38,6 @@ function App() {
           }
         />
       </Routes>
-
       {activeModal === "basket" && <Basket />}
     </>
   );

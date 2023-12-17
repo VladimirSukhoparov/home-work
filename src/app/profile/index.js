@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo } from "react";
 import PageLayout from "../../components/page-layout";
 import Header from "../../containers/header";
 import Navigation from "../../containers/navigation";
@@ -11,7 +11,6 @@ import Spinner from "../../components/spinner";
 
 const Profile = () => {
   const store = useStore();
- 
 
   const { t } = useTranslate();
   const select = useSelector((state) => ({
@@ -19,15 +18,15 @@ const Profile = () => {
     userPhone: state.profile.userPhone,
     userMail: state.profile.userMail,
     waiting: state.profile.waiting,
-    token:state.login.token,
+    token: state.login.token,
   }));
 
-  useInit(() => {
-    store.actions.profile.getProfile();
-  },
-  [select.token],
-  true) 
-
+  useInit(
+    () => {
+      store.actions.profile.getProfile();
+    },
+    [select.token]
+  );
 
   return (
     <PageLayout>
@@ -44,7 +43,6 @@ const Profile = () => {
           userMail={select.userMail}
         />
       </Spinner>
-      
     </PageLayout>
   );
 };

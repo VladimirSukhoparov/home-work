@@ -1,4 +1,5 @@
-import StoreModule from '../module';
+import StoreModule from "../module";
+
 
 /**
  * Список категорий

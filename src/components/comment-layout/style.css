@@ -1,0 +1,10 @@
+.CommentLayout {
+  padding: 30px 40px;
+}
+
+.CommentLayout-title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 400;
+}

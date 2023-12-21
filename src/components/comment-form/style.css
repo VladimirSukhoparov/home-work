@@ -1,0 +1,62 @@
+.CommentForm {
+  margin-top: 30px;
+}
+
+.CommentForm_shifted {
+  margin-left: 30px;
+}
+
+.CommentForm-stub {
+  margin: 30px 0;
+}
+
+.CommentForm-stub_shifted {
+  margin-left: 30px;
+}
+
+.CommentForm-fieldset {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.CommentForm-legend {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.CommentForm-textarea {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.CommentForm-submit {
+  margin-right: 10px;
+}
+
+.CommentForm-login {
+  display: inline-block;
+  text-decoration: none;
+
+  border-bottom: 1px solid #0087e9;
+  color: #0087e9;
+  cursor: pointer;
+}
+
+.CommentForm-cancelLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #666666;
+  color: #666666;
+  font-size: 16px;
+  cursor: pointer;
+}

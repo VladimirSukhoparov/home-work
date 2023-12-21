@@ -1,11 +1,11 @@
-import {memo, useCallback} from 'react';
-import useStore from '../../hooks/use-store';
-import useSelector from '../../hooks/use-selector';
-import useTranslate from '../../hooks/use-translate';
-import Item from '../../components/item';
-import List from '../../components/list';
-import Pagination from '../../components/pagination';
-import Spinner from '../../components/spinner';
+import {memo, useCallback} from "react";
+import useStore from "../../hooks/use-store";
+import useSelector from "../../hooks/use-selector";
+import useTranslate from "../../hooks/use-translate";
+import Item from "../../components/item";
+import List from "../../components/list";
+import Pagination from "../../components/pagination";
+import Spinner from "../../components/spinner";
 
 function CatalogList() {
   const store = useStore();
@@ -14,8 +14,6 @@ function CatalogList() {
     list: state.catalog.list,
     page: state.catalog.params.page,
     limit: state.catalog.params.limit,
-    sort: state.catalog.params.sort,
-    query: state.catalog.params.query,
     count: state.catalog.count,
     waiting: state.catalog.waiting,
   }));
@@ -27,12 +25,7 @@ function CatalogList() {
     onPaginate: useCallback(page => store.actions.catalog.setParams({page}), [store]),
     // генератор ссылки для пагинатора
     makePaginatorLink: useCallback((page) => {
-      return `?${new URLSearchParams({
-        page,
-        limit: select.limit,
-        sort: select.sort,
-        query: select.query
-      })}`;
+      return `?${new URLSearchParams({page, limit: select.limit, sort: select.sort, query: select.query})}`;
     }, [select.limit, select.sort, select.query])
   }
 
@@ -40,8 +33,7 @@ function CatalogList() {
 
   const renders = {
     item: useCallback(item => (
-      <Item item={item} onAdd={callbacks.addToBasket} link={`/articles/${item._id}`}
-            labelAdd={t('article.add')}/>
+      <Item item={item} onAdd={callbacks.addToBasket} link={`/articles/${item._id}`} labelAdd={t('article.add')}/>
     ), [callbacks.addToBasket, t]),
   };
 

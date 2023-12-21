@@ -1,4 +1,4 @@
-import {memo} from 'react';
+import {memo} from "react";
 import PropTypes from 'prop-types';
 import './style.css';
 
@@ -9,7 +9,7 @@ function Select(props) {
   };
 
   return (
-    <select className='Select' value={props.value} onChange={onSelect}>
+    <select className="Select" value={props.value} onChange={onSelect}>
       {props.options.map(item => (
         <option key={item.value} value={item.value}>{item.title}</option>
       ))}
@@ -27,8 +27,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-  onChange: () => {
-  }
+  onChange: () => {}
 }
 
 export default memo(Select);

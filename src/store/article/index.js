@@ -1,4 +1,4 @@
-import StoreModule from '../module';
+import StoreModule from "../module";
 
 /**
  * Детальная ифнормация о товаре для страницы товара

@@ -1,5 +1,5 @@
-import StoreModule from '../module';
-import simplifyErrors from '../../utils/simplify-errors';
+import StoreModule from "../module";
+import simplifyErrors from "../../utils/simplify-errors";
 
 /**
  * Сессия

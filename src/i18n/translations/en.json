@@ -20,5 +20,18 @@
   "auth.password": "Password",
   "auth.signIn": "Sign in",
   "session.signIn": "Sign In",
-  "session.signOut": "Sign Out"
+  "session.signOut": "Sign Out",
+  "profile.title": "Profile",
+  "profile.name": "Name",
+  "profile.phone": "Phone",
+  "profile.email": "email",
+  "comments.title": "Comments",
+  "comments.answer": "Answer",
+  "comments.newAnswer": "New answer",
+  "comments.newComment": "New comment",
+  "comments.send": "Send",
+  "comments.cancel": "Cancel",
+  "comments.toComment": "to be able to comment",
+  "comments.toAnswer": "to be able to answer",
+  "comments.login": "Login"
 }

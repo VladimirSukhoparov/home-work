@@ -22,5 +22,18 @@
   "auth.password": "Пароль",
   "auth.signIn": "Войти",
   "session.signIn": "Вход",
-  "session.signOut": "Выход"
+  "session.signOut": "Выход",
+  "profile.title": "Профиль",
+  "profile.name": "Имя",
+  "profile.phone": "Телефон",
+  "profile.email": "email",
+  "comments.title": "Комментарии",
+  "comments.answer": "Ответить",
+  "comments.newAnswer": "Новый ответ",
+  "comments.newComment": "Новый комментарий",
+  "comments.send": "Отправить",
+  "comments.cancel": "Отмена",
+  "comments.toComment": "чтобы иметь возможность комментировать",
+  "comments.toAnswer": "чтобы иметь возможность ответить",
+  "comments.login": "Войдите"
 }

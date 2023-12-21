@@ -1,7 +1,7 @@
-import {memo, useEffect} from 'react';
+import {memo, useEffect} from "react";
 import PropTypes from 'prop-types';
-import useSelector from '../../hooks/use-selector';
-import {useLocation, useNavigate} from 'react-router-dom';
+import useSelector from "../../hooks/use-selector";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function Protected({children, redirect}) {
 
@@ -15,11 +15,11 @@ function Protected({children, redirect}) {
 
   useEffect(() => {
     if (!select.exists && !select.waiting) {
-      navigate(redirect, {state: {back: location.pathname}});
+      navigate(redirect, {state: { back: location.pathname }});
     }
   }, [select.exists, select.waiting]);
 
-  if (!select.exists || select.waiting) {
+  if (!select.exists || select.waiting){
     return <div>Ждём...</div>
   } else {
     return children;

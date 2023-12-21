@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {cn as bem} from '@bem-react/classname'
 import './style.css';
 
@@ -28,7 +28,7 @@ function Pagination(props) {
   if (right < length) items.push(length);
 
   const onClickHandler = (number) => (e) => {
-    if (props.onChange && number) {
+    if (props.onChange) {
       e.preventDefault();
       props.onChange(number);
     }
